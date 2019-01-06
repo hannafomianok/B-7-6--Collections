@@ -125,6 +125,12 @@ namespace Base.Lesson_5
             public string FullName;
             public int FlatNumber;
             public int PhoneNumber;
+
+            public override string ToString()
+            {
+                return $"The neighor - {FullName}, his/her number - {PhoneNumber}";
+            }
+
         }
 
         public static void DictionaryOfNeighborSearch()
@@ -138,16 +144,10 @@ namespace Base.Lesson_5
             floorNeighbors.Remove(4);
 
             var numberofFlat = int.Parse(Console.ReadLine());
+            var neighbor = floorNeighbors[numberofFlat];
 
-            foreach (KeyValuePair<int, Neighbor> flatKey in floorNeighbors)
-            {
-                if (numberofFlat == flatKey.Key)
-                {
-                    Console.WriteLine($"The neighor - {flatKey.Value.FullName}, his/her number - {flatKey.Value.PhoneNumber}");
-                }
-            }
-
-
+            Console.WriteLine(neighbor);
+            
         }
     }
 }
